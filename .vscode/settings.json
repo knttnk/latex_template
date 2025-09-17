@@ -1,0 +1,29 @@
+{
+  "files.readonlyInclude": {
+    "**/.git/**": true,
+    "**/.output/**": true,
+  },
+  "latex-workshop.latex.outDir": "%DIR%/.output",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-outdir=%OUTDIR%",
+        "-pdfdvi",
+        "%DOC%"
+      ],
+      "env": { }
+    },
+  ],
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoClean.run": "onFailed",
+}
