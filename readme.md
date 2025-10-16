@@ -1,3 +1,7 @@
+# Note!
+
+Do not use this template until [this issue](https://github.com/iamhyc/Overleaf-Workshop/issues/180) is solved.
+
 # Readme
 
 This template features:
