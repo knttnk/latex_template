@@ -18,7 +18,11 @@
       "command": "latexmk",
       "args": [
         "-outdir=%OUTDIR%",
-        "-pdfdvi",
+        "-pdfdvi",  // Generate PDF via DVI
+        "-file-line-error", // Make error messages file:line:error style
+        "-halt-on-error", // Stop processing at the first error
+        "-interaction=nonstopmode", // Stop without asking for user input
+        "-gg",  // Clean up before building
         "%DOC%"
       ],
       "env": { }
