@@ -5,11 +5,14 @@
   },
   "latex-workshop.latex.outDir": "%DIR%/.output",
   "latex-workshop.latex.recipes": [
+    // Comment out one of the following recipes to switch between latex and lualatex
+    // {
+    //   "name": "latexmk",
+    //   "tools": [ "latexmk" ]
+    // },
     {
-      "name": "latexmk",
-      "tools": [
-        "latexmk"
-      ]
+      "name": "latexmk (lualatex)",
+      "tools": [ "latexmk (lualatex)" ]
     }
   ],
   "latex-workshop.latex.tools": [
@@ -18,12 +21,13 @@
       "command": "latexmk",
       "args": [
         "-outdir=%OUTDIR%",
-        "-pdfdvi",  // Generate PDF via DVI
+        "-pdfdvi", // Generate PDF via DVI
         "-file-line-error", // Make error messages file:line:error style
         "-halt-on-error", // Stop processing at the first error
         "-interaction=nonstopmode", // Stop without asking for user input
-        "-gg",  // Clean up before building
-        "%DOC%"
+        "-gg", // Clean up before building
+        "-synctex=1", // Generate SyncTeX data for synchronization between source and PDF
+        "%DOC%",
       ],
       "env": { }
     },
@@ -36,8 +40,9 @@
         "-file-line-error", // Make error messages file:line:error style
         "-halt-on-error", // Stop processing at the first error
         "-interaction=nonstopmode", // Stop without asking for user input
-        "-gg",  // Clean up before building
-        "%DOC%"
+        "-gg", // Clean up before building
+        "-synctex=1", // Generate SyncTeX data for synchronization between source and PDF
+        "%DOC%",
       ],
       "env": { }
     },
