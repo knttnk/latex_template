@@ -27,6 +27,20 @@
       ],
       "env": { }
     },
+    {
+      "name": "latexmk (lualatex)",
+      "command": "latexmk",
+      "args": [
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "-file-line-error", // Make error messages file:line:error style
+        "-halt-on-error", // Stop processing at the first error
+        "-interaction=nonstopmode", // Stop without asking for user input
+        "-gg",  // Clean up before building
+        "%DOC%"
+      ],
+      "env": { }
+    },
   ],
   "latex-workshop.latex.autoBuild.run": "onFileChange",
   "latex-workshop.latex.autoClean.run": "onFailed",
